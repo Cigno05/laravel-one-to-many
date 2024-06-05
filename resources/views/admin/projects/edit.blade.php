@@ -19,18 +19,32 @@ edit
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $project->title) }}">
+                    <input type="text" class="form-control" id="title" name="title"
+                        value="{{ old('title', $project->title) }}">
                 </div>
+
+                <div class="mb-3">
+                    <label for="type_id">Project Type</label>
+                    <select class="form-control" name="type_id" id="type_id">
+                        <option value="">-- Select Type --</option>
+                        @foreach ($types as $type)                        
+                            <option @selected($type->id == old('type_id')) value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea type="text" row="10" class="form-control" id="description" name="description" >{{ old('description', $project->description) }}</textarea>
+                    <textarea type="text" row="10" class="form-control" id="description"
+                        name="description">{{ old('description', $project->description) }}</textarea>
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="creation_date" class="form-label">Creation Date</label>
-                    <input type="date" class="form-control" id="creation_date" name="creation_date" value="{{ old('creation_date', $project->creation_date) }}">
+                    <input type="date" class="form-control" id="creation_date" name="creation_date"
+                        value="{{ old('creation_date', $project->creation_date) }}">
                 </div>
-                
+
 
 
                 <button type="submit" class="btn btn-primary">Edit</button>

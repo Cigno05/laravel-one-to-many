@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -24,21 +28,27 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::orderBy('name', 'asc')->get();
+
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $request->validate([
-            'title'=> 'required|max:200',
-            'creation_date'=> 'required|date',
-            'description'=> 'nullable',
-        ]);
+        //La validazione la fa StoreProjectRequest
 
-        $form_data = $request->all();
+        // $request->validate([
+        //     'title'=> 'required|max:200',
+        //     'creation_date'=> 'required|date',
+        //     'description'=> 'nullable',
+        // ]);
+
+        // $form_data = $request->all();
+
+        $form_data = $request->validated();// per la validazione
 
         $new_project = new Project();
 
@@ -47,6 +57,7 @@ class ProjectController extends Controller
         $new_project->link = 'https://github.com/Cigno05/'.(Str::slug($new_project->title));
         $new_project->creation_date = $form_data['creation_date'];
         $new_project->description = $form_data['description'];
+        $new_project->type_id = $form_data['type_id'];
 
         $new_project->save();
 
@@ -67,21 +78,29 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view("admin.projects.edit", compact("project"));
+
+        $types = Type::orderBy('name', 'asc')->get();
+
+        return view("admin.projects.edit", compact("project"), compact('types'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        $request->validate([
-            'title'=> 'required|max:200',
-            'creation_date'=> 'required|date',
-            'description'=> 'nullable',
-        ]);
 
-        $form_data = $request->all();
+        // la validazione la fa UpdateProjectRequest
+
+        // $request->validate([
+        //     'title'=> 'required|max:200',
+        //     'creation_date'=> 'required|date',
+        //     'description'=> 'nullable',
+        // ]);
+
+        // $form_data = $request->all();
+
+        $form_data = $request->validated();// per la validazione
 
         // $project->fill($form_data);
         // $project->slug = Str::slug($project->title);
@@ -91,6 +110,7 @@ class ProjectController extends Controller
         $project->link = 'https://github.com/Cigno05';
         $project->creation_date = $form_data['creation_date'];
         $project->description = $form_data['description'];
+        $project->type_id = $form_data['type_id'];
 
         $project->save();
 
