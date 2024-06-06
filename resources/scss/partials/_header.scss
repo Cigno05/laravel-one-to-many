@@ -5,15 +5,15 @@
     // }
 
     a:hover{
-        color: #EF3B2D;
+        color: var(--brand-red);
     }
 
 
     .dropdown-item {
-        color:  #EF3B2D;
+        color:  var(--brand-red);
 
         &:hover {
-            background-color: #4e5760;
+            background-color: #515151;
             color: white;
         }
     }
@@ -23,7 +23,7 @@
     }
 
     .dropdown-toggle:after, .nav-link::after {
-        color: #EF3B2D;
+        color: var(--brand-red);
     }
 
     img {
@@ -32,7 +32,7 @@
 
     .dropdown-menu {
         background-color: #212529;
-        border: solid 1px #EF3B2D;
+        border: solid 1px var(--brand-red);
     }
 
     

@@ -1,4 +1,24 @@
 main {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: white;
+    background-color: var(--dark-gray);
+
+    .card{
+        border: solid 2px var(--brand-red);
+        background-color: #515151;
+        color: white;
+        text-align: center;
+
+        & img {
+            width: 25px;
+        }
+
+        & a {
+            text-decoration: none;
+            color: currentColor;
+        }
+
+        
+    }
 }

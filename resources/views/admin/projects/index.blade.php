@@ -15,9 +15,9 @@ Index-pro
                     <h2 class="card-title">{{ $project->title }}</h2>
                     <p class="card-text">Created: {{ $project->creation_date }}</p>
                     <p class="card-text">Project Type: {{ $project->type ? $project->type->name : '' }}</p>
-                    <p><a href="{{ $project->link }}" class="card-link">Link to my Github</a></p>
-                    <p><a href="{{ $project->link }}/{{ $project->slug }}" class="card-link">Link to repository on Github</a></p>
-                    <p><a href="{{ route('projects.show', $project) }}" class="card-link">Info</a></p>
+                    <p><a href="{{ $project->link }}" class="card-link">My Github <i class="fa-brands fa-github"></i></a></p>
+                    <p><a href="{{ $project->link }}/{{ $project->slug }}" class="card-link">Project Github </a><i class="fa-brands fa-github"></i></a></p>
+                    <p><a href="{{ route('projects.show', $project) }}" class="card-link">Info <i class="fa-solid fa-circle-info"></i></a></p>
 
                 </div>
             </div>
