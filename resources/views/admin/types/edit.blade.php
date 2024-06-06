@@ -2,7 +2,7 @@
 
 @section('pageTitle')
 
-edit
+edit.typ
 
 @endsection
 

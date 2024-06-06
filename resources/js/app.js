@@ -14,23 +14,25 @@ document.querySelectorAll('.form-delete').forEach(form => {
         const modalElRun = form.querySelector('.modal-run');
         const modalElStop = form.querySelector('.modal-stop');
 
-        modalEl.classList.add('visible');
+        modalEl.style.display = "block";
         
         modalElStop.addEventListener('click', function(){
-            //console.log(modalEl);
-            //modalEl.classList.remove('visible');
+            console.log(modalEl);
+            // modalEl.classList.remove('visible');
+            // console.log(modalEl.classList);
+            modalEl.style.display = "none";
             
-            console.dir(modalEl.outerHTML);
-            modalEl.outerHTML = 
-            `
-            <div class="my-modal">
-                <div class="modal-container">
-                    <h5 class="text-center me-5">Delete this project?</h5>
-                    <button class="btn btn-danger modal-run mx-5">Yes, Delete</button>
-                    <button class="btn btn-success modal-stop">No, Comeback</button>
-                </div>
-            </div>
-            `
+            // console.dir(modalEl.outerHTML);
+            // modalEl.outerHTML = 
+            // `
+            // <div class="my-modal">
+            //     <div class="modal-container">
+            //         <h5 class="text-center me-5">Delete this project?</h5>
+            //         <button class="btn btn-danger modal-run mx-5">Yes, Delete</button>
+            //         <button class="btn btn-success modal-stop">No, Comeback</button>
+            //     </div>
+            // </div>
+            // `
         });
         
         modalElRun.addEventListener('click', function(){

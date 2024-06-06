@@ -30,6 +30,7 @@ Route::middleware('auth')
 });
 
 Route::resource('projects', ProjectController::class)->only('index', 'show');
+Route::resource('types', TypeController::class)->only('index');
 
 
 Route::get('/dashboard', function () {

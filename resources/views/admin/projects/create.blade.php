@@ -2,7 +2,7 @@
 
 @section('pageTitle')
 
-create
+create-pro
 
 @endsection
 
