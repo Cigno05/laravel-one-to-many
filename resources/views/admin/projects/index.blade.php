@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Index
+Index-pro
 @endsection
 
 @section('content')
