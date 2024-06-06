@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateTypeRequest;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -47,15 +48,21 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view("admin.types.edit", compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
+    public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $form_data = $request->validated();// per la validazione
+
+        $type->name = $form_data['name'];
+
+        $type->save();
+
+        return to_route("types.index", $type);
     }
 
     /**

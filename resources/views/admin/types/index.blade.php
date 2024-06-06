@@ -22,7 +22,7 @@ Index-typ
                     <tr>
                         <td>{{ $type->id }}</td>
                         <td>{{ $type->name }}</td>
-                        <td><a href="" class="btn btn-primary">Edit</a></td>
+                        <td><a href="{{ route('types.edit', $type) }}" class="btn btn-primary">Edit</a></td>
                         <td><button class="btn btn-danger">Delete</button></td>
                     </tr>
                 </tbody>

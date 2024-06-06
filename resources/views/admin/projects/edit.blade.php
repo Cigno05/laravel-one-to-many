@@ -7,7 +7,7 @@ edit
 @endsection
 
 @section('content')
-<maih>
+
     <section class="edit-page">
         <div class="container w-50 mt-5">
             <h1>Edit your project!</h1>
@@ -62,6 +62,6 @@ edit
         @endif
 
     </section>
-</maih>
+
 
 @endsection
