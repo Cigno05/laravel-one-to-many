@@ -13,13 +13,14 @@ show
             <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title">{{ $project->title }}</h5>
+                    <p class="card-text">Project Type: {{ $project->type ? $project->type->name : '' }}</p>
                     <p class="card-text">{{ $project->description }}</p>
                     <p class="card-text">Created: {{ $project->creation_date }}</p>
                     <p><a href="{{ $project->link }}" class="card-link">Link to my Github</a></p>
                     <p><a href="{{ $project->link }}/{{ $project->slug }}" class="card-link">Link to repository on Github</a></p>
                     <div class="d-flex gap-2">
                         @auth
-                        <button href="{{ route('projects.edit', $project) }}" class="btn btn-primary">Edit</></button>
+                        <a href="{{ route('projects.edit', $project) }}" class="btn btn-primary">Edit</a>
                         <form class="form-delete" action="{{ route('projects.destroy', $project) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

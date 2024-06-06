@@ -1,0 +1,19 @@
+.header-nav{
+
+    a {
+        color: white;
+    }
+
+    a:hover{
+        color: #EF3B2D;
+    }
+
+    .dropdown-item {
+        color:  black;
+    }
+
+    .dropdown-toggle:after, .nav-link::after {
+        color: #EF3B2D;
+    }
+}
+
