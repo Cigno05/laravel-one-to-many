@@ -32,8 +32,8 @@ show
                             <div class="my-modal">
                                 <div class="modal-container">
                                     <h5 class="text-center me-5">Delete this project?</h5>
-                                    <button class="btn btn-danger modal-run mx-5">Yes, Delete</button>
-                                    <button class="btn btn-success modal-stop">No, Comeback</button>
+                                    <span class="btn btn-danger modal-run mx-5">Yes, Delete</span>
+                                    <span class="btn btn-success modal-stop">No, Comeback</span>
                                 </div>
                             </div>
 

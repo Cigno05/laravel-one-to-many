@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://kit.fontawesome.com/43ebce74f3.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="{{Vite::asset('resources/img/swan.png')}}"/>
+    <!-- <link rel="icon" type="image/png" href="{{Vite::asset('resources/img/swan.png')}}"/> -->
 
     <title> @yield('title')</title>
 

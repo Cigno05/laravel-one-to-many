@@ -14,13 +14,17 @@ document.querySelectorAll('.form-delete').forEach(form => {
         const modalElRun = form.querySelector('.modal-run');
         const modalElStop = form.querySelector('.modal-stop');
 
-        modalEl.style.display = "block";
+        // modalEl.style.display = "block";
+
+        modalEl.classList.add('visible');
+        console.log('submit');
         
         modalElStop.addEventListener('click', function(){
-            console.log(modalEl);
-            // modalEl.classList.remove('visible');
-            // console.log(modalEl.classList);
-            modalEl.style.display = "none";
+            modalEl.classList.remove('visible');
+            console.log('click');
+            // modalEl.classList.add('gfgfgfvisible');
+            console.log(modalEl.classList);
+            // modalEl.style.display = "none";
             
             // console.dir(modalEl.outerHTML);
             // modalEl.outerHTML = 
