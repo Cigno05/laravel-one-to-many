@@ -8,17 +8,20 @@ show
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-6">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">{{ $project->title }}</h2>
                     <p class="card-text">Project Type: {{ $project->type ? $project->type->name : '' }}</p>
-                    <p class="card-text">{{ $project->description }}</p>
+                    <p class="card-text">Project Description: <br>{{ $project->description }}</p>
                     <p class="card-text">Created: {{ $project->creation_date }}</p>
-                    <p><a href="{{ $project->link }}" class="card-link">My Github <i class="fa-brands fa-github"></i></a></p>
-                    <p><a href="{{ $project->link }}/{{ $project->slug }}" class="card-link">Project Github </a><i class="fa-brands fa-github"></i></a></p>
-
+                    <div class="d-flex justify-content-center gap-3">
+                        <p><a href="{{ $project->link }}" class="card-link">My Github <i
+                                    class="fa-brands fa-github"></i></a></p>
+                        <p><a href="{{ $project->link }}/{{ $project->slug }}" class="card-link">Project Github </a><i
+                                class="fa-brands fa-github"></i></a></p>
+                    </div>
 
                     <div class="d-flex gap-2 mb-2 justify-content-center">
                         @auth
